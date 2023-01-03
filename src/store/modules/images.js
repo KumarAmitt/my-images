@@ -12,7 +12,7 @@ const actions = {
   fetchImages: async (context) => {
     const { token  } = context.rootState.auth;
     const response = await api.fetchImages(token)
-    console.log(response)
+    context.commit('setImages', response.data.data)
   }
 };
 
